@@ -1,6 +1,7 @@
 import {Route, Routes, BrowserRouter} from 'react-router-dom'
 import './App.css'
 import UserForm from './views/UserForm'
+import GetOneUser from './components/getOneUser'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/user' element={<UserForm/>}/>
+          <Route path='/user/:id' element={<GetOneUser/>}/>
         </Routes>
       </BrowserRouter>
     </>
