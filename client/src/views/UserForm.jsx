@@ -22,7 +22,7 @@ const UserForm = () => {
 
     const [confirm, set_confirm] = useState("")
 
-    const [orders, set_orders] = useState([])
+    const [error, set_error] = useState("")
 
     const navigate = useNavigate();
     const handleFirstName = (e) => {
@@ -58,6 +58,8 @@ const UserForm = () => {
     }
 
 
+
+
     // VERIFY LOCALHOST FOR REQUEST
     const submitHandler = (e) => {
         e.preventDefault();
@@ -76,7 +78,9 @@ const UserForm = () => {
             console.log(res.data);
             navigate('/pizzaHub')
         }).catch((err) => {
-            console.log(err);
+            console.log(err.response.data.errors);
+            set_error(err.response.data.errors)
+            //Working on Addressing Paramters For Login Credentials
         })
     }
     return (
@@ -131,6 +135,8 @@ const UserForm = () => {
                             <p>{}</p>
                             <input type="text" onChange={handleConfirm} value={confirm}/>
                         </div>
+
+                        <p>{error}</p>
 
                         <button>Create User</button>
                     </form>
