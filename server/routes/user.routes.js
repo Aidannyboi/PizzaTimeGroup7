@@ -25,8 +25,6 @@ router.route('/user/logout')
 
 router.route("/user")
     .post(createUser)
-
-router.route("/user/:id")
     .get(getOneUser)
     .put(UpdateOneUser)
     .delete(deleteOneUser)

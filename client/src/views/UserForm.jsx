@@ -59,17 +59,7 @@ const UserForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:9999/api/user',{
-            first_name,
-            last_name,
-            address,
-            city,
-            state,
-            email,
-            password,
-            confirm,
-            orders
-        })
+        axios.post('http://localhost:9999/api/user/signin',user,{ withCredentials: true})
         .then(res => {
             console.log(res)
             console.log(res.data);
