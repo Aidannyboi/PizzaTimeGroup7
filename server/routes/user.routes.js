@@ -24,10 +24,12 @@ router.route('/user/logout')
 
 
 router.route("/user")
+    .post(createUser)
+
+router.route("/user/:id")
+    .get(getOneUser)
     .put(UpdateOneUser)
     .delete(deleteOneUser)
-    .post(createUser)
-    .get(getOneUser)
 
 router.route("/user/password")
     .put(UpdateUserPassword)
