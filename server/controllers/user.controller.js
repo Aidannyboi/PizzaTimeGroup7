@@ -224,9 +224,9 @@ async function login(req, res){
 
 async function logout(req, res) {
 
-    clearCookie("usertoken").then(
-        res.status(202).clearCookie("usertoken").send('cookie cleared')
-    )
+    
+    res.status(202).clearCookie("usertoken").send('cookie cleared')
+    res.end()
 
 }
 

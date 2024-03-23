@@ -20,7 +20,7 @@ router.route("/user/signin")
     .post(login)
 
 router.route('/user/logout')
-    .post(logout)
+    .delete(logout)
 
 
 router.route("/user")

@@ -57,9 +57,20 @@ const UserForm = () => {
         set_confirm(e.target.value)
     }
 
+
+    // VERIFY LOCALHOST FOR REQUEST
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:9999/api/user/signin',user,{ withCredentials: true})
+        axios.post('http://localhost:8000/api/user/',{
+            "first_name" : first_name,
+            "last_name": last_name,
+            "email": email,
+            "state": state,
+            "address": address,
+            "city": city,
+            "password": password,
+            "confirm": confirm
+    },{ withCredentials: true})
         .then(res => {
             console.log(res)
             console.log(res.data);
