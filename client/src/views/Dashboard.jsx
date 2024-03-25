@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 import axios from "axios"
 import { Link } from "react-router-dom"
+import Header from "../components/Header"
 
 
 const Dashboard = () => {
@@ -19,16 +20,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="Header">
-                <h1>PaPa Pizzeria</h1>
-                <div>
-                    <Link to={'/pizzaHub'}><button>Home</button></Link>
-                    <Link to={'/order/new'}><button>Order</button></Link>
-                    <button>Account</button>
-                    <button>Logout</button>
-                </div>
-            </div>
-
+            <Header/>
             <div className="BodyStyle">
                 <div className="itemCard">
 
