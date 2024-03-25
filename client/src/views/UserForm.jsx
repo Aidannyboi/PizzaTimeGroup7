@@ -89,7 +89,7 @@ const UserForm = () => {
                 <h1>PaPas Pizzaria</h1>
             </div>
 
-            <div className="BodyStyle">
+            <div>
                 <div>
                     <form onSubmit={submitHandler}>
                         <div className="inputStyle">
@@ -127,16 +127,18 @@ const UserForm = () => {
                             <p>{}</p>
                             <input type="text" onChange={handleEmail} value={email}/>
                         </div>
+
+                        <div className="inputStyle">
                             <p>Password:</p>
                             <p>{}</p>
                             <input type="text" onChange={handlePassword} value={password}/>
+                        </div>
+
                         <div className="inputStyle">
-                            <p>Confirm Password</p>
+                            <p>Confirm Password:</p>
                             <p>{}</p>
                             <input type="text" onChange={handleConfirm} value={confirm}/>
                         </div>
-
-                        <p>{error}</p>
 
                         <button>Create User</button>
                     </form>

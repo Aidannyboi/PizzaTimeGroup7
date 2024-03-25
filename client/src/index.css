@@ -66,3 +66,45 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.inputStyle{
+  display: flex;
+  height: 3vh;
+  width: 35vh;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.Header{
+  display: flex;
+  width: 120vh;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.BodyStyle{
+  display: flex;
+  justify-content: space-between;
+  width: 110vh;
+}
+
+.itemCard{
+border: 5px black solid;
+border-radius: 50px;
+height: 50vh;
+width: 30vh;
+background-color: grey;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 10px;
+}
+
+.desc{
+  color: black;
+  font-weight: 500;
+}
