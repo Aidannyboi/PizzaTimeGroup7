@@ -21,33 +21,33 @@ const CreateOrder = () => {
             <Header/>
 
             <div className="BodyStyle">
-                <form>
-                    <h3>CRAFT-A-PIZZA</h3>
+                <form className="formStyle">
+                    <h2>CRAFT-A-PIZZA</h2>
                     <div>
                         <div>
-                            <lable>METHOD:</lable>
+                            <label>METHOD:</label>
                             <select id="" name="">
                                 <option>Delivery</option>
                                 <option>PickUp</option>
                             </select>
                         </div>
 
-                        <div>
-                            <lable>SIZE:</lable>
+                        <div className="optionsStyle">
+                            <label>SIZE:</label>
                             <select id="" name="">
                                 <option>Large</option>
                                 <option>Medium</option>
                                 <option>Small</option>
                             </select>
 
-                            <lable>CRUST:</lable>
+                            <label>CRUST:</label>
                             <select id="" name="">
                                 <option>Thin Crust</option>
                                 <option>Stuffed Crust</option>
                                 <option>Thick Crust</option>
                             </select>
 
-                            <lable>QTY:</lable>
+                            <label>QTY:</label>
                             <select id="" name="">
                                 <option>1</option>
                                 <option>2</option>
@@ -56,55 +56,53 @@ const CreateOrder = () => {
                             </select>
                         </div>
 
-                        <div>
-                            <form className="toppings">
+                        <div className="toppings">
                                 <h3>TOPPINGS:</h3>
                                 
                                 <div>
-                                    <lable>pepperoni:</lable>
-                                    <input type="radio" id="pepperoni" name="" value=""/>
+                                    <label>pepperoni:</label>
+                                    <input type="checkbox" id="pepperoni" name="" value=""/>
                                 </div>
 
                                 <div>
-                                    <lable>sausage:</lable>
-                                    <input type="radio" id="sausage" name="" value=""/>
+                                    <label>sausage:</label>
+                                    <input type="checkbox" id="sausage" name="" value=""/>
                                 </div>
                                 
                                 <div>
-                                    <lable>olives:</lable>
-                                    <input type="radio" id="olives" name="" value=""/>
+                                    <label>olives:</label>
+                                    <input type="checkbox" id="olives" name="" value=""/>
                                 </div>
                                 
                                 <div>
-                                    <lable>basil:</lable>
-                                    <input type="radio" id="basil" name="" value=""/>
+                                    <label>basil:</label>
+                                    <input type="checkbox" id="basil" name="" value=""/>
                                 </div>
 
                                 <div>
-                                <lable>chicken:</lable>
-                                <input type="radio" id="chicken" name="" value=""/>
+                                <label>chicken:</label>
+                                <input type="checkbox" id="chicken" name="" value=""/>
                                 </div>
                                 
                                 <div>
-                                    <lable>ham:</lable>
-                                    <input type="radio" id="ham" name="" value=""/>
+                                    <label>ham:</label>
+                                    <input type="checkbox" id="ham" name="" value=""/>
                                 </div>
 
                                 <div>
-                                    <lable>bacon:</lable>
-                                    <input type="radio" id="bacon" name="" value=""/>
+                                    <label>bacon:</label>
+                                    <input type="checkbox" id="bacon" name="" value=""/>
                                 </div>
 
                                 <div>
-                                    <lable>pineapple:</lable>
-                                    <input type="radio" id="pineapple" name="" value=""/>
+                                    <label>pineapple:</label>
+                                    <input type="checkbox" id="pineapple" name="" value=""/>
                                 </div>
 
                                 <div>
-                                    <lable>extra cheese:</lable>
-                                    <input type="radio" id="extra cheese" name="" value=""/>
+                                    <label>extra cheese:</label>
+                                    <input type="checkbox" id="extra cheese" name="" value=""/>
                                 </div>
-                            </form>
                         </div>
 
                     </div>
