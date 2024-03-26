@@ -85,12 +85,12 @@ const UserForm = () => {
     }
     return (
         <>
-            <div className="Header">
+            <div className="Header login">
                 <h1>PaPas Pizzaria</h1>
             </div>
 
-            <div>
-                <div>
+            <div className="login">
+                <div className="BodyStyle login">
                     <form onSubmit={submitHandler}>
                         <div className="inputStyle">
                             <p>First Name:</p>
