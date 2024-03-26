@@ -22,10 +22,9 @@ router.route("/user/signin")
 router.route('/user/logout')
     .delete(logout)
 
-
 router.route("/user")
-    .post(createUser)
     .get(getOneUser)
+    .post(createUser)
     .put(UpdateOneUser)
     .delete(deleteOneUser)
 

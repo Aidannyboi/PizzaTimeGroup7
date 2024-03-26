@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [user, setUser] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/user', { withCredentials: true})
+        axios.get('http://localhost:8000/api/user', {withCredentials: true})
             .then((res) => {
                 setUser(res.data);
             })

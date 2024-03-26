@@ -9,11 +9,13 @@ import pizza_router from './routes/pizza.routes.js';
 import order_router from './routes/order.routes.js';
 import crust_router from './routes/crust.routes.js';
 import size_router from './routes/size.routes.js';
+import cookieParser from 'cookie-parser';
 
 
 
 
 const app = express();
+app.use(cookieParser())
 app.use(express.json(), cors({credentials: true,origin: 'http://localhost:5173' }));
 
 

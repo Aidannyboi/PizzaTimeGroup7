@@ -5,15 +5,10 @@ import Order from '../models/order.model.js'
 //import dotenv from 'dotenv';
 
 
-const SECRET_KEY = process.env.SECRET_KEY
-
-
 async function validateUser(req){
     
-    const userId = jwt.verify(req.cookies.usertoken, SECRET_KEY)
-
+    const userId = jwt.verify(req.cookies.usertoken, process.env.SECRET_KEY)
     const user = await User.findById(userId.id)
-
     return(user)
 }
 
@@ -27,7 +22,7 @@ async function createUser(req, res){
             const newUser = await User.create(req.body)        
             const userToken = jwt.sign({
                 id: newUser._id
-            }, SECRET_KEY);
+            }, process.env.SECRET_KEY);
             
             res.cookie("usertoken", userToken, {
                 httpOnly: true
@@ -65,8 +60,7 @@ async function getOneUser(req, res){
     try{
 
         const user = validateUser(req)
-
-        if (user.length > 0){
+        if (user){
             const u = {
                 first_name: user.first_name,
                 last_name: user.last_name,
@@ -204,7 +198,7 @@ async function login(req, res){
             }else{
                 const userToken = jwt.sign({
                     id: user._id
-                }, SECRET_KEY);
+                }, process.env.SECRET_KEY);
                 
                 res.cookie("usertoken", userToken, {
                     httpOnly: true
