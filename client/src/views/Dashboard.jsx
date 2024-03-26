@@ -9,13 +9,13 @@ const Dashboard = () => {
     const [user, setUser] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/user')
+        axios.get('http://localhost:8000/api/user', { withCredentials: true})
             .then((res) => {
                 setUser(res.data);
             })
             .catch((err) => {
                 console.log(err)
-            }),{ withCredentials: true}
+            })
     }, [])
 
     return (
