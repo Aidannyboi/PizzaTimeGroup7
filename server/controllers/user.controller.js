@@ -92,7 +92,7 @@ async function deleteOneUser(req, res){
 
         const user = validateUser(req)
 
-        if (user.length > 0){
+        if (user){
             const u = await User.findByIdAndDelete(req.body.id)
             res.json(u)
         }else{
@@ -112,7 +112,7 @@ async function UpdateOneUser(req, res){
 
         const u = validateUser(req)
         
-        if (u.length > 0){
+        if (u){
             const user = await User.findByIdAndUpdate(user._id, {...req.body, password: false}, {new: true, runValidators: true})
             res.json(user)
         }else{
@@ -132,7 +132,7 @@ async function UpdateUserPassword(req, res){
 
         const u = validateUser(req)
         
-        if (u.length > 0){
+        if (u){
             const user = await User.findByIdAndUpdate(user_id, req.body, {new: true, runValidators: true})
             res.json(user)
         }else{
@@ -153,7 +153,7 @@ async function getAllUserOrders(req, res){
 
         const u = validateUser(req)
 
-        if(u.length > 0){
+        if(u){
 
             let orders = []
 
