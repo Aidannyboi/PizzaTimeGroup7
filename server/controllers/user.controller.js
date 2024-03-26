@@ -8,7 +8,7 @@ import Order from '../models/order.model.js'
 const SECRET_KEY = process.env.SECRET_KEY
 
 
-async function validateUser(){
+async function validateUser(req){
     
     const userId = jwt.verify(req.cookies.usertoken, SECRET_KEY)
 
@@ -64,7 +64,7 @@ async function getAllUsers(req, res){
 async function getOneUser(req, res){
     try{
 
-        const user = validateUser()
+        const user = validateUser(req)
 
         if (user.length > 0){
             const u = {
@@ -96,7 +96,7 @@ async function getOneUser(req, res){
 async function deleteOneUser(req, res){
     try{
 
-        const user = validateUser()
+        const user = validateUser(req)
 
         if (user.length > 0){
             const u = await User.findByIdAndDelete(req.body.id)
@@ -116,7 +116,7 @@ async function deleteOneUser(req, res){
 async function UpdateOneUser(req, res){
     try{
 
-        const u = validateUser()
+        const u = validateUser(req)
         
         if (u.length > 0){
             const user = await User.findByIdAndUpdate(user._id, {...req.body, password: false}, {new: true, runValidators: true})
@@ -136,7 +136,7 @@ async function UpdateOneUser(req, res){
 async function UpdateUserPassword(req, res){
     try{
 
-        const u = validateUser()
+        const u = validateUser(req)
         
         if (u.length > 0){
             const user = await User.findByIdAndUpdate(user_id, req.body, {new: true, runValidators: true})
@@ -157,7 +157,7 @@ async function getAllUserOrders(req, res){
     
     try{
 
-        const u = validateUser()
+        const u = validateUser(req)
 
         if(u.length > 0){
 
