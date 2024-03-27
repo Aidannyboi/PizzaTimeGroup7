@@ -70,7 +70,6 @@ async function getOneUser(req, res){
                 email: user.email,
                 orders: user.orders
             }
-            console.log(u)
 
             res.json(u)
 
@@ -91,7 +90,7 @@ async function getOneUser(req, res){
 async function deleteOneUser(req, res){
     try{
 
-        const user = validateUser(req)
+        const user = await validateUser(req)
 
         if (user){
             const u = await User.findByIdAndDelete(req.body.id)
@@ -111,7 +110,7 @@ async function deleteOneUser(req, res){
 async function UpdateOneUser(req, res){
     try{
 
-        const u = validateUser(req)
+        const u = await validateUser(req)
         
         if (u){
             const user = await User.findByIdAndUpdate(user._id, {...req.body, password: false}, {new: true, runValidators: true})
@@ -131,7 +130,7 @@ async function UpdateOneUser(req, res){
 async function UpdateUserPassword(req, res){
     try{
 
-        const u = validateUser(req)
+        const u = await validateUser(req)
         
         if (u){
             const user = await User.findByIdAndUpdate(user_id, req.body, {new: true, runValidators: true})
@@ -152,7 +151,7 @@ async function getAllUserOrders(req, res){
     
     try{
 
-        const u = validateUser(req)
+        const u = await validateUser(req)
 
         if(u){
 
