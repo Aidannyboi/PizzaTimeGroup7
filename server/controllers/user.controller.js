@@ -59,7 +59,7 @@ async function getAllUsers(req, res){
 async function getOneUser(req, res){
     try{
 
-        const user = validateUser(req)
+        const user = await validateUser(req)
         if (user){
             const u = {
                 first_name: user.first_name,
@@ -70,6 +70,7 @@ async function getOneUser(req, res){
                 email: user.email,
                 orders: user.orders
             }
+            console.log(u)
 
             res.json(u)
 
