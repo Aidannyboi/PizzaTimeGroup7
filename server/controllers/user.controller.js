@@ -113,7 +113,7 @@ async function UpdateOneUser(req, res){
         const u = await validateUser(req)
         
         if (u){
-            const user = await User.findByIdAndUpdate(user._id, {...req.body, password: false}, {new: true, runValidators: true})
+            const user = await User.findByIdAndUpdate(u._id, {...req.body, password: false}, {new: true, runValidators: true})
             res.json(user)
         }else{
 
