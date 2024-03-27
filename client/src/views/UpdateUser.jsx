@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import { useNavigate } from "react-router-dom"
+import axios from "axios"
 
 
 const UpdateUser = () => {
@@ -25,9 +26,25 @@ const UpdateUser = () => {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/user', {withCredentials: true})
+            .then((res) => {
+                set_First_name(res.data.first_name)
+                set_Last_Name(res.data.last_name)
+                set_address(res.data.address)
+                set_city(res.data.city)
+                set_state(res.data.state)
+                set_email(res.data.email)
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:8000/api/user/',{
+        axios.put('http://localhost:8000/api/user',{
             "first_name" : first_name,
             "last_name": last_name,
             "email": email,
@@ -42,8 +59,8 @@ const UpdateUser = () => {
             console.log(res.data);
             navigate('/pizzaHub')
         }).catch((err) => {
-            console.log(err.response.data.errors);
-            set_error(err.response.data.errors)
+            console.log(err);
+            set_error(err.response)
             //Working on Addressing Paramters For Login Credentials
         })
     }
@@ -127,13 +144,13 @@ const UpdateUser = () => {
                         </div>
 
                         <div className="inputStyle">
-                            <p>Password:</p>
+                            <p>New Password:</p>
                             <p>{}</p>
                             <input type="text" onChange={handlePassword} value={password}/>
                         </div>
 
                         <div className="inputStyle">
-                            <p>Confirm Password:</p>
+                            <p>Confirm New Password:</p>
                             <p>{}</p>
                             <input type="text" onChange={handleConfirm} value={confirm}/>
                         </div>

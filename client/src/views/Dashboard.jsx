@@ -12,6 +12,7 @@ const Dashboard = () => {
         axios.get('http://localhost:8000/api/user', {withCredentials: true})
             .then((res) => {
                 setUser(res.data);
+                console.log(res.data)
             })
             .catch((err) => {
                 console.log(err)
