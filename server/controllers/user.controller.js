@@ -133,7 +133,7 @@ async function UpdateUserPassword(req, res){
         const u = await validateUser(req)
         
         if (u){
-            const user = await User.findByIdAndUpdate(user_id, req.body, {new: true, runValidators: true})
+            const user = await User.findByIdAndUpdate(u._id, req.body, {new: true, runValidators: true})
             res.json(user)
         }else{
             res.status(400).json({user: {message: "User not found"}})
