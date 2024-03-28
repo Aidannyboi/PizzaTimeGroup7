@@ -6,20 +6,18 @@ import Crust from './crust.model.js';
 const PizzaSchema = new Schema({
 
     size: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: [true, "Size is Required"]
     },
 
     crust: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: [true, "Size is Required"]
     },
 
     toppings: {
-        type: [
-            Schema.Types.ObjectId
-        ],
-        required: [true, "Please select toppings"]
+        type: String,
+        required: [false, "Please select toppings"]
     },
 
     price: {
@@ -30,7 +28,7 @@ const PizzaSchema = new Schema({
 }, {timestamp: true})
 
 
-PizzaSchema.pre('save', async function(next) {
+/*PizzaSchema.pre('save', async function(next) {
     
     console.log(this)
 
@@ -49,7 +47,7 @@ PizzaSchema.pre('save', async function(next) {
     this.price = toppings_total
     next();
     
-})
+})*/
 
 const Pizza = model("Pizza", PizzaSchema);
 export default Pizza;
