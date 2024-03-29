@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState, } from "react"
 
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const UserForm = () => {
@@ -140,7 +140,13 @@ const UserForm = () => {
                             <input type="text" onChange={handleConfirm} value={confirm}/>
                         </div>
 
-                        <button>Create User</button>
+                        <div className="ButtonOptions">
+
+                            <button className="removePizza">Create User</button>
+                            <br/>
+                            <h2>Already Have an Account?</h2>
+                            <Link to={"/login"}><button className="removePizza">Login</button></Link>
+                        </div>
                     </form>
                 </div>
             </div>

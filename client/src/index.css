@@ -135,3 +135,28 @@ padding: 10px;
   justify-content: center;
   width: 110vh;
 }
+
+.pizzaDisplay{
+  width: 47vh;
+  margin-left: 30vh;
+  border: 5px solid black;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  padding: 10px;
+
+}
+
+.removePizza{
+  width: 100px;
+  height: 75px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ButtonOptions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 30vh;
+}

@@ -34,25 +34,25 @@ const Dashboard = () => {
 
                 </div>
 
-                <div className="itemCard">
+                <div className="itemCard" style={{backgroundImage: "url(https://media.istockphoto.com/id/1263227499/vector/yellow-and-black-danger-tape-blank-warning-vector-on-isolated-background-eps-10.jpg?s=612x612&w=0&k=20&c=rWdAy_7uUN2cAWMKehr5jr3THqWSGeue7lCCSvj23LA=)"}}>
 
                     <p className="desc">
                     Looking for new slice of life? You found the right place!
                     click the button below and start you new pizza journey!
                     </p>
 
-                    <Link to={'/order/fav'}><button>Fav Pizza!</button></Link>
+                    <Link to={'/order/fav'}><button>Coming Soon!</button></Link>
 
                 </div>
 
-                <div className="itemCard">
+                <div className="itemCard" style={{backgroundImage: "url(https://media.istockphoto.com/id/1263227499/vector/yellow-and-black-danger-tape-blank-warning-vector-on-isolated-background-eps-10.jpg?s=612x612&w=0&k=20&c=rWdAy_7uUN2cAWMKehr5jr3THqWSGeue7lCCSvj23LA=)"}}>
 
                     <p className="desc">
                     Looking for new slice of life? You found the right place!
                     click the button below and start you new pizza journey!
                     </p>
 
-                    <Link to={'/order/random'}><button>Suprise Pie!</button></Link>
+                    <Link to={'/order/random'}><button>Coming Soon! </button></Link>
 
                 </div>
             </div>

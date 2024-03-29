@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react"
 import Header from "../components/Header"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import GetPizzas from "../components/getPizzas"
 
 
-const CreateOrder = () => {
+const UpdatePizza = () => {
 
     const [crust, setCrust] = useState("")
     const [size, setSize] = useState("")
     const [toppings, setToppings] = useState("none")
 
     const navigate = useNavigate();
+
+    const {id} = useParams();
     
     const submitHandler= (e) => {
         e.preventDefault();
         console.log(crust +" "+ size +" "+ toppings)
-    axios.post("http://localhost:8000/api/pizzas",{
+    axios.put("http://localhost:8000/api/pizzas/"+id,{
         crust,
         size,
         toppings,
@@ -30,13 +32,26 @@ const CreateOrder = () => {
         //Working on Addressing Paramters For Login Credentials
     })
     }
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/pizzas/'+ id, {withCredentials: true})
+            .then((res) => {
+                setCrust(res.data.crust)
+                setSize(res.data.size)
+                setToppings("none")
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
     return(
         <>
             <Header/>
 
             <div className="BodyStyle">
                 <form className="formStyle" onSubmit={submitHandler}>
-                    <h2>CRAFT-A-PIZZA</h2>
+                    <h2>UPDATE-A-PIZZA</h2>
                     <div>
                         <div>
                             <label>METHOD:</label>
@@ -48,7 +63,7 @@ const CreateOrder = () => {
 
                         <div className="optionsStyle">
                             <label>SIZE:</label>
-                            <select id="size" name="" onChange={(e) => setSize(e.target.value)}>
+                            <select id="size" value={size} name="" onChange={(e) => setSize(e.target.value)}>
                                 <option>Select Size</option>
                                 <option value="Large">Large</option>
                                 <option value="Medium">Medium</option>
@@ -56,7 +71,7 @@ const CreateOrder = () => {
                             </select>
 
                             <label>CRUST:</label>
-                            <select id="Crust" name="" onChange={(e) => setCrust(e.target.value)}>
+                            <select id="Crust" value={crust} name="" onChange={(e) => setCrust(e.target.value)}>
                                 <option>Select Crust</option>
                                 <option value="Thin Crust">Thin Crust</option>
                                 <option value="Stuffed Crust">Stuffed Crust</option>
@@ -113,15 +128,14 @@ const CreateOrder = () => {
                                 </div>
                         </div>
 
-                        <button>Create Button</button>
+                        <button>Update Pizza</button>
 
                     </div>
                 </form>
             </div>
-
-            <GetPizzas/>
         </>
     )
 }
 
-export default CreateOrder
+export default UpdatePizza
+

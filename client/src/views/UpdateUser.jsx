@@ -155,7 +155,7 @@ const UpdateUser = () => {
                             <input type="text" onChange={handleConfirm} value={confirm}/>
                         </div>
 
-                        <button>Create User</button>
+                        <button>Update User</button>
                     </form>
                 </div>
             </div>
