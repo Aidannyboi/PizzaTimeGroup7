@@ -18,12 +18,6 @@ const UpdateUser = () => {
 
     const [email, set_email] = useState("")
 
-    const [password, set_password] = useState("")
-
-    const [confirm, set_confirm] = useState("")
-
-    const [error, set_error] = useState("")
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -50,9 +44,7 @@ const UpdateUser = () => {
             "email": email,
             "state": state,
             "address": address,
-            "city": city,
-            "password": password,
-            "confirm": confirm
+            "city": city
     },{ withCredentials: true})
         .then(res => {
             console.log(res)
@@ -89,74 +81,56 @@ const UpdateUser = () => {
         set_email(e.target.value)
     }
 
-    const handlePassword = (e) => {
-        set_password(e.target.value)
-    }
-
-    const handleConfirm = (e) => {
-        set_confirm(e.target.value)
-    }
-
     return(
         <>
         <Header/>
 
-        <div>
-            <h2>Update Account!</h2>
-        </div>
-        <div className="login">
-                <div className="BodyStyle login">
-                    <form onSubmit={submitHandler}>
-                        <div className="inputStyle">
-                            <p>First Name:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleFirstName} value={first_name}/>
-                        </div>
+        <div className="borderBody">
+            <div>
+                <h2>Update Account!</h2>
+            </div>
+            <div className="login">
+                    <div className="BodyStyle login">
+                        <form onSubmit={submitHandler}>
+                            <div className="inputStyle">
+                                <p>First Name:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleFirstName} value={first_name}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>Last Name:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleLastName} value={last_name}/>
-                        </div>
+                            <div className="inputStyle">
+                                <p>Last Name:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleLastName} value={last_name}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>Address:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleAdress} value={address}/>
-                        </div>
+                            <div className="inputStyle">
+                                <p>Address:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleAdress} value={address}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>City:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleCity} value={city}/>
-                        </div>
+                            <div className="inputStyle">
+                                <p>City:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleCity} value={city}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>State:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleState} value={state}/>
-                        </div>
+                            <div className="inputStyle">
+                                <p>State:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleState} value={state}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>Email:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleEmail} value={email}/>
-                        </div>
+                            <div className="inputStyle">
+                                <p>Email:</p>
+                                <p>{}</p>
+                                <input type="text" onChange={handleEmail} value={email}/>
+                            </div>
 
-                        <div className="inputStyle">
-                            <p>New Password:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handlePassword} value={password}/>
-                        </div>
-
-                        <div className="inputStyle">
-                            <p>Confirm New Password:</p>
-                            <p>{}</p>
-                            <input type="text" onChange={handleConfirm} value={confirm}/>
-                        </div>
-
-                        <button>Update User</button>
-                    </form>
+                            <button>Update User</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>

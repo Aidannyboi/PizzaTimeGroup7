@@ -22,7 +22,7 @@ const Dashboard = () => {
     return (
         <>
             <Header/>
-            <div className="BodyStyle">
+            <div className="BodyStyle borderBody">
                 <div className="itemCard">
 
                     <p className="desc">
@@ -37,8 +37,8 @@ const Dashboard = () => {
                 <div className="itemCard" style={{backgroundImage: "url(https://media.istockphoto.com/id/1263227499/vector/yellow-and-black-danger-tape-blank-warning-vector-on-isolated-background-eps-10.jpg?s=612x612&w=0&k=20&c=rWdAy_7uUN2cAWMKehr5jr3THqWSGeue7lCCSvj23LA=)"}}>
 
                     <p className="desc">
-                    Looking for new slice of life? You found the right place!
-                    click the button below and start you new pizza journey!
+                    Ttrying to bring bag the nostalgia of you favorite Pizza?
+                    click the button below and be sent to your favorite pizza!
                     </p>
 
                     <Link to={'/order/fav'}><button>Coming Soon!</button></Link>
@@ -48,8 +48,8 @@ const Dashboard = () => {
                 <div className="itemCard" style={{backgroundImage: "url(https://media.istockphoto.com/id/1263227499/vector/yellow-and-black-danger-tape-blank-warning-vector-on-isolated-background-eps-10.jpg?s=612x612&w=0&k=20&c=rWdAy_7uUN2cAWMKehr5jr3THqWSGeue7lCCSvj23LA=)"}}>
 
                     <p className="desc">
-                    Looking for new slice of life? You found the right place!
-                    click the button below and start you new pizza journey!
+                    Trying to live life in the wild side?
+                    Randomize your pizza with the button below!
                     </p>
 
                     <Link to={'/order/random'}><button>Coming Soon! </button></Link>

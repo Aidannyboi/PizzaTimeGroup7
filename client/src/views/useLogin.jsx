@@ -44,7 +44,7 @@ const UserLogin = () => {
                 <h1>PaPas Pizzaria</h1>
             </div>
 
-            <div className="login">
+            <div className="login borderBody">
                 <div className="BodyStyle login">
                     <form onSubmit={submitHandler}>
                         <div className="inputStyle">
